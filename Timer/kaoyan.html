@@ -1,0 +1,44 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>考研倒计时日历_距离2020年研究生考试</title>
+	<link rel="stylesheet" href="timer.css">
+	<script type="text/javascript">
+        //考研倒计时
+        function getRTime(){
+            var EndTime= new Date("2019/12/21 09:00:00"); //截止时间
+            var NowTime = new Date();
+            var t =EndTime.getTime() - NowTime.getTime();
+            var d=Math.floor(t/1000/60/60/24);
+            var h=Math.floor(t/1000/60/60%24);
+            var m=Math.floor(t/1000/60%60);
+            var s=Math.floor(t/1000%60);
+
+            document.getElementById("t_d").innerHTML = d + " 天";
+            document.getElementById("t_h").innerHTML = h + " 时";
+            document.getElementById("t_m").innerHTML = m + " 分";
+            document.getElementById("t_s").innerHTML = s + " 秒";
+        }
+        setInterval(getRTime,1000);
+	</script>
+</head>
+<body>
+
+		<div class="right">
+			<!--考研倒计时开始-->
+			<div class="time1 timeActive">
+				<h1>2020年考研倒计时</h1>
+				<h4>2020考研初试时间：2019年12月21日-12月23日</h4>
+				<h4>目前距离2020年考研还有</h4>
+				<DIV id="CountMsg" class="HotDate">
+					<span id="t_d">00 天</span>
+					<span id="t_h">00 时</span>
+					<span id="t_m">00 分</span>
+					<span id="t_s">00 秒</span>
+				</DIV>
+			</div>
+			<!--考研倒计时结束-->
+		</div>
+</body>
+</html>
